@@ -1,9 +1,15 @@
-import express from "express"
+import express from "express";
 import {routes} from "./routes";
 
 const path = require("path")
 const app = express()
 const port: Number = 3001
+
+app.all('/*', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+});
 
 app.set("views", path.join(__dirname, "views"))
 app.use(express.json());
