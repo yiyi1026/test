@@ -90,7 +90,7 @@ function calcStat(usersJson: User[]) {
   
   return {
     number: num,
-    averageAge: (totalAge / num).toFixed(1),
+    averageAge: parseFloat((totalAge / num).toFixed(1)),
     medianAge: medianAge,
     topFiveName: firstNameCountArr.slice(0, 5)
   }
