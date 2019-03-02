@@ -1,8 +1,8 @@
-import React, { Component } from "react"
-import { Route, HashRouter } from 'react-router-dom'
-import UserList from "./components/UserList"
-import UserProfile from './components/UserProfile'
-import Dashboard from './components/Dashboard'
+import React, { Component } from "react";
+import { Route, HashRouter } from 'react-router-dom';
+import UserList from "./components/UserList";
+import UserProfile from './components/UserProfile';
+import Dashboard from './components/Dashboard';
 
 // api npm run watch
 // frontend npm run start

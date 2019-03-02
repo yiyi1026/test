@@ -1,5 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './Dashboard.css';
+
 class DashBoard extends Component {
+  
   constructor(props) {
     super(props);
     this.state = {};
@@ -13,23 +16,27 @@ class DashBoard extends Component {
       });
   }
 
-  
-
   render() {
     let statistics = this.state;
     if (statistics){  
       const {count, averageAge, medianAge, topFiveName} = this.state;
+      let names;
+      if (topFiveName){
+      names = topFiveName.map(function (el) {
+        return el[0];
+      })
+    }
       return (
-        <div className="dashBoardContainer">
+        <div className="navigation-menu">
 
-          <div className="headerbar-container">
-            <div className="header-btn">
+          <div className="navigation-container">
+            <div className="navigation-btn">
               Dashboard-flex
             </div>
-            <div className="header-btn">
+            <div className="navigation-btn">
               User List-flex
             </div>
-            <div className="header-btn">
+            <div className="navigation-btn">
               Contributor-flex
             </div>
           </div>
@@ -45,7 +52,8 @@ class DashBoard extends Component {
               Median Age: {medianAge}
             </div>
             <div className="dashBoard-Detail">
-              Top Five Most Common First Names: {topFiveName}   
+              Top Five Most Common First Names: {names}   
+              {/*  */}
             </div>
           </div>
         </div>
