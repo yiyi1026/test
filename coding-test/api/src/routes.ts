@@ -85,13 +85,17 @@ function calcStat(usersJson: User[]) {
     return [key, firstNameCount[key]]
   })
   firstNameCountArr.sort(function (first: any, second: any) {
-    return second[1] - first[1]
+    return second[1] -first[1] ||
+    first[0].toLowerCase().localeCompare(second[0].toLowerCase())
   })
   
   return {
-    number: num,
+    count: num,
     averageAge: parseFloat((totalAge / num).toFixed(1)),
     medianAge: medianAge,
     topFiveName: firstNameCountArr.slice(0, 5)
   }
 }
+
+// TODO 1. rename num as count
+// TODO 2. separate logic function from routes.ts
