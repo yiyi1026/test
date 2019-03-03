@@ -5,15 +5,60 @@
 }
 
 .aggregate-table {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-self: center;
+}
+
+.aggregate-header {
+  margin: auto;
+  color: #00504d;
+  font-size: 32px;
+  font-family: museo-sans, sans-serif;
+  font-weight: 700;
+  text-align: left;
+  padding: 32px;
+}
+
+.aggregate-body {
+  color: #00504d;
+  margin-top: 28px;
+  text-align: left;
+  vertical-align: top;
+  font-family: museo-sans, sans-serif;
+  font-size: 24px;
+  width: 400px;
+}
+
+.aggregate-cell{
+  padding-bottom: 10px;
+  width: 250px;
+}
+
+.nameList{
+  list-style:none;
+  /* list-style-type: none; */
+  float:left;
+}
+
+
+/* .dashBoard-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.aggregate-table {
   width: 100%;
   margin: auto 100px;
   text-align: left;
-  /* max-width: 1000px; */
 }
 
 tr {
   width: 200px;
-}
+} */
 
 /* .dashBoardDetail-container {
   margin: auto;

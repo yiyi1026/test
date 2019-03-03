@@ -23,28 +23,35 @@ class DashBoard extends Component {
       const {count, averageAge, medianAge, topFiveName} = this.state;
       if (topFiveName){
         names = topFiveName.map(function (el, index) {
-          return(<span className="nameList-element" key={`nameList ${index}`}>{el[0]} </span>);
+          return(<div className="nameList-element" key={`nameList ${index}`}>{el[0]} </div>);
       })
     }
+    console.log(names)
 
     let nameList = <div className="nameList">{names}</div>
 
       return (
         <div className="dashBoard-container">
           <table className="aggregate-table">
-            <caption>Aggregate Information</caption>
-            <tbody>
-              <tr>
-                <td>Total Count:</td>
+            <caption className="aggregate-header">Aggregate Information</caption>
+            <tbody className="aggregate-body">
+              <tr className="aggregate-row">
+                <td className="aggregate-cell">Total Count:</td>
                 <td>{count}</td> 
               </tr>
-              <tr>
-                <td>Average Age</td>
+              <tr className="aggregate-row">
+                <td className="aggregate-cell">Average Age:</td>
                 <td>{averageAge}</td> 
               </tr>
-              <tr>
-                <td>Median Age:</td>
+              <tr className="aggregate-row">
+                <td className="aggregate-cell">Median Age:</td>
                 <td>{medianAge}</td> 
+              </tr>
+              <tr className="aggregate-row">
+                <td className="aggregate-cell">Top Five Names:</td>
+                <td>
+                    {nameList}
+                </td> 
               </tr>
             </tbody>
           </table>
