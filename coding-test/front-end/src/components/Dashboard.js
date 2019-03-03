@@ -18,47 +18,62 @@ class DashBoard extends Component {
 
   render() {
     let statistics = this.state;
+    let names;
     if (statistics){  
       const {count, averageAge, medianAge, topFiveName} = this.state;
-      let names;
       if (topFiveName){
-      names = topFiveName.map(function (el) {
-        return el[0];
+        names = topFiveName.map(function (el, index) {
+          return(<span className="nameList-element" key={`nameList ${index}`}>{el[0]} </span>);
       })
     }
+
+    let nameList = <div className="nameList">{names}</div>
+
       return (
-        <div className="navigation-menu">
+        <div className="dashBoard-container">
+          <table className="aggregate-table">
+            <caption>Aggregate Information</caption>
+            <tbody>
+              <tr>
+                <td>Total Count:</td>
+                <td>{count}</td> 
+              </tr>
+              <tr>
+                <td>Average Age</td>
+                <td>{averageAge}</td> 
+              </tr>
+              <tr>
+                <td>Median Age:</td>
+                <td>{medianAge}</td> 
+              </tr>
+            </tbody>
+          </table>
 
-          <div className="navigation-container">
-            <div className="navigation-btn">
-              Dashboard-flex
+          {/*
+          <div className="dashBoardDetail-container">
+            <div className="dashBoardDetail-col">
+              <div className="dashBoardDetail">
+                Total Count: {count}
+              </div>
+              <div className="dashBoardDetail">
+                Average Age: {averageAge}            
+              </div>
+              <div className="dashBoardDetail">
+                Median Age: {medianAge}
+              </div>
             </div>
-            <div className="navigation-btn">
-              User List-flex
+            <div className="dashBoardDetail-col">
+              Top 5 Most Common First Name 
+              <br/>
+              (Alphabetically):
+              <div className="dashBoardDetail">
+                {nameList}
+              </div>
             </div>
-            <div className="navigation-btn">
-              Contributor-flex
-            </div>
-          </div>
-
-          <div className="dashBoard-Detail-container">
-            <div className="dashBoard-Detail">
-              Total Count: {count}
-            </div>
-            <div className="dashBoard-Detail">
-              Average Age: {averageAge}            
-            </div>
-            <div className="dashBoard-Detail">
-              Median Age: {medianAge}
-            </div>
-            <div className="dashBoard-Detail">
-              Top Five Most Common First Names: {names}   
-              {/*  */}
-            </div>
-          </div>
+          </div> */}
         </div>
       )
-  }
+    }
   }
 }
 

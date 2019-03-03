@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './UserProfile.css'
 
 class UserProfile extends Component {
   constructor(props) {
@@ -36,16 +36,30 @@ class UserProfile extends Component {
     if (user){
       let {first_name, last_name, email, age} = user;
       return (
-        <div className="userDetailMain">
-          <p>This is the detailed information for {first_name} {last_name}.</p> 
-            <p>First Name: {first_name}</p>
-            <p>Last Name: {last_name}</p>
-            <p>Email: {email}</p>
-            <p>Age: {age}</p>
+        <div className="user-container">
+          <div className="userDetail-container">
+            <div className='user-header'>
+              {first_name +" "+ last_name}
+            </div>
+            <div className="userDetail-container">
+              <div className="userDetail">
+                First Name: {first_name}
+              </div>
+              <div className="userDetail">
+                Last Name: {last_name}
+              </div>
+              <div className="userDetail">
+                Age : {age}            
+              </div>
+              <div className="userDetail">
+                Email: {email}           
+              </div>
+            </div>
+          </div>
         </div>
       )
     }else{
-      return <div>nothing</div>
+      return <div></div>
     }
   }
 }

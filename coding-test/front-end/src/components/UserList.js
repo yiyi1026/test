@@ -35,44 +35,30 @@ class UserList extends Component {
 
   render() {
     let {userData} = this.state
-    // let userMap;
     let columns
     
     if (userData){
-      // userMap = <ul className="userListMain">
-      // {userData.map((user, i) => (
-      //   <li key={`user-${i}`}> 
-
-      //     <span> {user.id} </span>
-      //     <span> {user.first_name} </span>
-      //     <span> {user.last_name} </span>
-      //     <span> {user.email} </span>
-      //     <span> {user.age} </span>
-      //   </li>
-      //     ))}
-      //   </ul>
-
       columns = [
         {
           Header: 'ID',
           accessor: 'id',
-          width: 100
+          width: 50
         }, {
           Header: 'First Name',
           accessor: 'first_name',
-          width: 200
+          width: 150
         }, {
           Header: 'Last Name',
           accessor: 'last_name',
-          width: 200
+          width: 150
         }, {
           Header: 'Email',
           accessor: 'email',
-          width: 400
+          width: 300
         }, {
           Header: 'Age',
           accessor: 'age',
-          width: 100
+          width: 50
         }
       ]
     }else{
@@ -81,21 +67,18 @@ class UserList extends Component {
     
     return (
       <div className="userListContainer">
-        <div>
-          <input 
-            placeholder='type name to search'
+        <div className= "userNameSearchContainer">
+          <span className= "userNameSearch">Filter by name:</span>
+          <input className="userNameSearch"
+            placeholder='Type name to search'
             value={this.state.searchValue}
             onChange={this.updateSearchValue}
           ></input>
         </div>
-        <div style={{width:"1000px"}}>
-          {/* <div className="header">
-            {userMap}
-          </div> */}
+        <div className="usersTableContainer">
           <ReactTable
             data={userData}
             columns={columns}
-            // filterable
             filtered={this.state.filtered}
             defaultFilterMethod={(filter, row) =>{
                 const f = filter.value.toLowerCase()
@@ -108,7 +91,6 @@ class UserList extends Component {
             }
             getTrProps={(state, rowInfo, column, instance) => ({
               onClick: e => {
-                console.log(rowInfo)
                 this.props.history.push("user/"+ rowInfo.row.id)
               }
             })}
@@ -123,18 +105,6 @@ class UserList extends Component {
 }
 
 export default UserList
-
-// sample state shape:
-//   {users:[
-//     {
-//       'id': 1,
-//       'first_name': 'Jane',
-//       'last_name': 'Doe',
-//       'email': 'JaneDoe@gmail.com',
-//       'age': 38
-//     }
-//   ]
-// }
 
 // TODO 1. add spinner
 // TODO 2. put inline-style to separate css file

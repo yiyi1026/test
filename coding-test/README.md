@@ -22,3 +22,10 @@ Build an interface in react that has the following screens:
 
 This test is meant to be open ended, so you are free to design the interface and the api endpoints however you see fit to meet the requirements listed above. The look and feel aren't all that important, so we'd advise just focusing on the functionality.  
 Please delete your node_modules folder before sending your code back to us.
+
+# Run
+
+install: run `npm install` in both the `api` folder and the `front-end` folder
+- run `npm run watch` in `api` folder
+- run `npm run start` in `front-end` folder
+- main page should be loaded at your default browser

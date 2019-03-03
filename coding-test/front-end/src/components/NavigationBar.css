@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+}
+
+.navigation {
+  display: flex;
+  height: 100%;
+  justify-content: flex-start;
+  background-color: #005653;
+  overflow: hidden;
+}
+
+.navigation-btn {
+  padding: 14px 30px;
+  font-size: 16px;
+  color: white;
+  font-family: museo-sans, sans-serif;
+  font-weight: 400;
+  max-width: 150px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navigation-btn:hover {
+  color: rgb(205, 197, 197);
+}
+
