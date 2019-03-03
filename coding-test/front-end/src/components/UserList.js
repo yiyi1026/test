@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import ReactTable from 'react-table'
 import 'react-table/react-table.css'
 import './UserList.css'
-
+import { css } from '@emotion/core';
+import { GridLoader } from 'react-spinners';
 
 class UserList extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      isLoading: true,
       userData: [],
       searchValue: '',
       filtered: []
@@ -29,16 +31,27 @@ class UserList extends Component {
     fetch('http://localhost:3001/api/users')
       .then(response => response.json())
       .then(data => {
-        this.setState({ userData: data })
+        this.setState({ userData: data,
+                        isLoading: false })
       })
   }
 
   render() {
+    if (this.state.isLoading){
+      return(
+        <div className="userList-container">
+          <div className= "userNameSearch-container padding">
+            <GridLoader
+            size={20}
+            sizeUnit={"px"}
+            color={"#00504d"}
+            />
+          </div>
+        </div>
+      )
+    }
     let {userData} = this.state
-    let columns
-    
-    if (userData){
-      columns = [
+    let columns = [
         {
           Header: 'ID',
           accessor: 'id',
@@ -61,13 +74,10 @@ class UserList extends Component {
           width: 50
         }
       ]
-    }else{
-      return
-    }
     
     return (
-      <div className="userListContainer">
-        <div className= "userNameSearchContainer">
+      <div className="userList-container">
+        <div className= "userNameSearch-container">
           <span className= "userNameSearch">Filter by name:</span>
           <input className="userNameSearch"
             placeholder='Type name to search'
@@ -75,7 +85,7 @@ class UserList extends Component {
             onChange={this.updateSearchValue}
           ></input>
         </div>
-        <div className="usersTableContainer">
+        <div className="usersTable-container">
           <ReactTable
             data={userData}
             columns={columns}
@@ -107,4 +117,3 @@ class UserList extends Component {
 export default UserList
 
 // TODO 1. add spinner
-// TODO 2. put inline-style to separate css file

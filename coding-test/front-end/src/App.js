@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Route, HashRouter } from 'react-router-dom'
+import { Route, BrowserRouter } from 'react-router-dom'
 import {Switch} from 'react-router'
 import UserList from "./components/UserList"
 import UserProfile from './components/UserProfile'
@@ -15,7 +15,7 @@ class App extends Component {
   // Current Logic, exact users/ to userlist, exact user/:id to userprofile, other path go to current mainpage(dashboard)
   render() {
     return (
-      <HashRouter>
+      <BrowserRouter>
         <div className="app"> 
           <NavigationBar/>
           <Switch>
@@ -26,7 +26,7 @@ class App extends Component {
             <Route exact path="/developer" component={Developer}/>
           </Switch>
         </div> 
-      </HashRouter>
+      </BrowserRouter>
     )
   }
 }

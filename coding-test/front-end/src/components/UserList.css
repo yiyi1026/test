@@ -1,20 +1,20 @@
-.userListContainer {
+.userList-container {
   display: flex;
   flex-flow: column;
   justify-content: center;  
 }
 
-.usersTableContainer {
+.usersTable-container {
   margin: auto;
   max-width: 1000px;
 }
 
 .ReactTable .rt-tr:hover .rt-td {
-  background: rgb(205, 197, 197);;
+  background: rgb(205, 197, 197);
   cursor: pointer;
 }
 
-.userNameSearchContainer {
+.userNameSearch-container {
   display: flex;
   justify-content: left;
   color: #00504d;
@@ -37,4 +37,9 @@ span.userNameSearch {
 
 input::placeholder {
   font-size: 14px;
+}
+
+.padding {
+  padding-top: 100px;
+  
 }

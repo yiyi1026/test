@@ -5,11 +5,11 @@
 }
 
 .developerDetail-container {
-  margin-top: 28px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-self: center;
+  margin-top: 28px;
 }
 
 .developer-header {
@@ -23,10 +23,10 @@
 }
 
 .developerDetail {
+  margin: 10px 20px;
   display: flex;
   color: #00504d;
   font-family: museo-sans, sans-serif;
   font-size: 24px;
-  margin: 10px 20px;
   width: 350px;
 }

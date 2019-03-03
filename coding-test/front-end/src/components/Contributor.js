@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import './Contributor.css';
+import React, { Component } from "react"
+import './Contributor.css'
 
 class Developer extends Component {
 

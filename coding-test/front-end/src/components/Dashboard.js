@@ -26,7 +26,6 @@ class DashBoard extends Component {
           return(<div className="nameList-element" key={`nameList ${index}`}>{el[0]} </div>);
       })
     }
-    console.log(names)
 
     let nameList = <div className="nameList">{names}</div>
 
