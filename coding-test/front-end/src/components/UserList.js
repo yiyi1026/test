@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
-import ReactTable from 'react-table'
-import 'react-table/react-table.css'
-import './UserList.css'
-import { css } from '@emotion/core';
-import { GridLoader } from 'react-spinners';
+import React, { Component } from "react"
+import ReactTable from "react-table"
+import "react-table/react-table.css"
+import "./UserList.css"
+import { GridLoader } from "react-spinners";
 
 class UserList extends Component {
   constructor(props) {
@@ -11,7 +10,7 @@ class UserList extends Component {
     this.state = {
       isLoading: true,
       userData: [],
-      searchValue: '',
+      searchValue: "",
       filtered: []
     }
     this.updateSearchValue  = this.updateSearchValue.bind(this)
@@ -21,14 +20,14 @@ class UserList extends Component {
     this.setState({
       searchValue: e.target.value,
       filtered: [{
-        id: 'first_name',
+        id: "first_name",
         value: e.target.value
       }]
     })
   }
 
   componentDidMount() {
-    fetch('http://localhost:3001/api/users')
+    fetch("http://localhost:3001/api/users")
       .then(response => response.json())
       .then(data => {
         this.setState({ userData: data,
@@ -53,24 +52,24 @@ class UserList extends Component {
     let {userData} = this.state
     let columns = [
         {
-          Header: 'ID',
-          accessor: 'id',
+          Header: "ID",
+          accessor: "id",
           width: 50
         }, {
-          Header: 'First Name',
-          accessor: 'first_name',
+          Header: "First Name",
+          accessor: "first_name",
           width: 150
         }, {
-          Header: 'Last Name',
-          accessor: 'last_name',
+          Header: "Last Name",
+          accessor: "last_name",
           width: 150
         }, {
-          Header: 'Email',
-          accessor: 'email',
+          Header: "Email",
+          accessor: "email",
           width: 300
         }, {
-          Header: 'Age',
-          accessor: 'age',
+          Header: "Age",
+          accessor: "age",
           width: 50
         }
       ]
@@ -80,7 +79,7 @@ class UserList extends Component {
         <div className= "userNameSearch-container">
           <span className= "userNameSearch">Filter by name:</span>
           <input className="userNameSearch"
-            placeholder='Type name to search'
+            placeholder="Type name to search"
             value={this.state.searchValue}
             onChange={this.updateSearchValue}
           ></input>

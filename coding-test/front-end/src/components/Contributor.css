@@ -24,9 +24,9 @@
 
 .developerDetail {
   margin: 10px 20px;
-  display: flex;
   color: #00504d;
-  font-family: museo-sans, sans-serif;
+  display: flex;
   font-size: 24px;
+  font-family: museo-sans, sans-serif;
   width: 350px;
 }

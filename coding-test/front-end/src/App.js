@@ -1,22 +1,20 @@
 import React, { Component } from "react"
-import { Route, BrowserRouter } from 'react-router-dom'
-import {Switch} from 'react-router'
+import { Route, BrowserRouter } from "react-router-dom"
+import {Switch} from "react-router"
 import UserList from "./components/UserList"
-import UserProfile from './components/UserProfile'
-import Dashboard from './components/Dashboard'
+import UserProfile from "./components/UserProfile"
+import Dashboard from "./components/Dashboard"
 import NavigationBar from "./components/NavigationBar"
 import Developer from "./components/Contributor"
-import './App.css'
+import "./App.css"
 
-// api npm run watch
-// frontend npm run start
 
 class App extends Component {
-  // Current Logic, exact users/ to userlist, exact user/:id to userprofile, other path go to current mainpage(dashboard)
+
   render() {
     return (
       <BrowserRouter>
-        <div className="app"> 
+        <div className="app">
           <NavigationBar/>
           <Switch>
             <Route exact path="/users" component={UserList}/>
@@ -27,10 +25,8 @@ class App extends Component {
           </Switch>
         </div> 
       </BrowserRouter>
-    )
+    );
   }
 }
 
 export default App
-
-//TODO when other path doesn't fit come to dashboard

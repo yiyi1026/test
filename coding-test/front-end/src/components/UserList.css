@@ -17,17 +17,17 @@
 .userNameSearch-container {
   display: flex;
   justify-content: left;
+  margin: 15px auto;
   color: #00504d;
   font-family: museo-sans, sans-serif;
   font-weight: 400;
   font-size: 16px;
-  margin: 15px auto;
 }
 
 .userNameSearch {
-  margin: auto;
   height: 30px;
   width: 300px;
+  margin: auto;
 }
 
 span.userNameSearch {

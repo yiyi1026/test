@@ -23,7 +23,7 @@ routes.get('/api/users', (req, res) => {
     res.setHeader('Content-Type', 'application/json')
     res.write(JSON.stringify(csvJSON(data.toString())))
     res.end()
-  })
+  })  
 })
 
 interface User {
@@ -96,6 +96,3 @@ function calcStat(usersJson: User[]) {
     topFiveName: firstNameCountArr.slice(0, 5)
   }
 }
-
-// TODO 1. rename num as count
-// TODO 2. separate logic function from routes.ts

@@ -29,3 +29,4 @@ install: run `npm install` in both the `api` folder and the `front-end` folder
 - run `npm run watch` in `api` folder
 - run `npm run start` in `front-end` folder
 - main page should be loaded at your default browser
+- click any line of user information can direct to the page to that user.

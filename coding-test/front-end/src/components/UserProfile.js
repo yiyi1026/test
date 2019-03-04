@@ -1,18 +1,21 @@
-import React, { Component } from 'react';
-import './UserProfile.css'
+import React, { Component } from "react";
+import "./UserProfile.css"
 
 class UserProfile extends Component {
   constructor(props) {
     super(props);
-    this.state = {'id': "",'first_name': "", "last_name": "", "email": "", "age": ""};
+    this.state = {
+      "id": "",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "age": ""
+    };
     this.toggleDetail = false;
   }
 
-  // double refresh to reload
-
   componentDidMount() {
     let id = this.props.match.params.id;
-    // console.log(this.props);
     fetch(`http://localhost:3001/api/user/${id}`)
       .then(response => response.json())
       .then(data => {
@@ -38,7 +41,7 @@ class UserProfile extends Component {
       return (
         <div className="user-container">
           <div className="userDetail-container">
-            <div className='user-header'>
+            <div className="user-header">
               {first_name +" "+ last_name}
             </div>
             <div className="userDetail-container">
@@ -65,16 +68,3 @@ class UserProfile extends Component {
 }
 
 export default UserProfile
-
-// sample state shape:
-// {
-//   'id': 1,
-//   'first_name': 'Jane',
-//   'last_name': 'Doe',
-//   'email': 'JaneDoe@gmail.com',
-//   'age': 38
-// }
-
-
-// front-end npm run start
-// api npm run watch
