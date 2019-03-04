@@ -35,7 +35,7 @@ interface User {
 }
 
 function csvJSON(csv: any) {
-  let lines = csv.split("\r\n")
+  let lines = csv.replace("\r", "").split('\n')
   let result: User[] = []
   let headers = lines[0].split(",")
   for (let i = 1; i < lines.length; i++) {
